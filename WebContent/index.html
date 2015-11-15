@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app>
+<head>
+<title>Tomato Sales</title>
+<script src="https://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
+<script src="tomato.js"></script>
+</head>
+
+<body ng-app="tomatoSales">
+	<div ng-controller="TomatoSalesController">
+		<button ng-click="submit()">Refresh</button>
+		Size <input type="text" ng-model="size">
+		<table>
+			<tr>
+				<th>Provider</th>
+				<th>Tomatoes</th>
+				<th>Sale Date</th>
+			</tr>
+			<tr ng-repeat="sale in sales">
+				<td>{{sale.provider}}</td>
+				<td>{{sale.tomatoes}}</td>
+				<td>{{sale.timestamp | date:'dd.MM.yyyy'}}</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
